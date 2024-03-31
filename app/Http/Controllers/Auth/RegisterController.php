@@ -68,6 +68,19 @@ class RegisterController extends Controller
             $birth_day = date('Y-m-d', strtotime($data));
             $subjects = $request->subject;
 
+            // $request->validate([
+            //     'over_name' => 'required|string|max:10',
+            //     'under_name' => 'required|string|max:10',
+            //     'over_name_kana' => 'required|string|regex:/^[ァ-ヶ　]+$/u|max:30',
+            //     'under_name_kana' => 'required|string|regex:/^[ァ-ヶ　]+$/u|max:30',
+            //     'mail_address' => 'required|unique:users|email:rfc|min:5|max:40',
+            //     'sex' => 'required',
+            //     'birth_day' => 'required|after_or_equal:2000-01-01',
+            //     'role' => 'required',
+            //     'password' => 'required|confirmed|min:8|max:30',
+            // ]);
+
+
             $user_get = User::create([
                 'over_name' => $request->over_name,
                 'under_name' => $request->under_name,
@@ -79,13 +92,15 @@ class RegisterController extends Controller
                 'role' => $request->role,
                 'password' => bcrypt($request->password)
             ]);
+
             $user = User::findOrFail($user_get->id);
             $user->subjects()->attach($subjects);
             DB::commit();
             return view('auth.login.login');
         }catch(\Exception $e){
             DB::rollback();
-            return redirect()->route('loginView');
+            return redirect()->route('registerView');
+            // ログインから登録に変更
         }
     }
 }
