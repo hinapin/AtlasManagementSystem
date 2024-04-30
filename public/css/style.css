@@ -17,10 +17,10 @@ li {
 }
 
 /* ログイン画面 */
-.atlas-logo {
-  margin-top: 70px;
-  margin-left: 500px;
+#login-page {
+  display: block;
 }
+
 
 .border {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
