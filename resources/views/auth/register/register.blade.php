@@ -14,63 +14,56 @@
 </head>
 <body>
   <form action="{{ route('registerPost') }}" method="POST">
-    <div class="w-100 vh-100 d-flex" style="align-items:center; justify-content:center;">
-      <div class="w-25 vh-75 border p-3">
+    <div class="w-100 vh-100 d-flex" id="reg-pa" style="align-items:center; justify-content:center;">
+      <div class="w-45 vh-75 border p-3">
         <div class="register_form">
           <div class="d-flex mt-3" style="justify-content:space-between">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-            <div class="" style="width:140px">
             @error('over_name')
-                <div class="alert alert-danger">{{ $message }}</div>
+              <div class="alert alert-danger">{{ $message }}</div>
             @enderror
+            <div class="" style="width:140px">
               <label class="d-block m-0" style="font-size:13px">姓</label>
               <div class="border-bottom border-primary" style="width:140px;">
                 <input type="text" style="width:140px;" class="border-0 over_name" name="over_name">
               </div>
             </div>
+            @error('under_name')
+              <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
             <div class="" style="width:140px">
               <label class=" d-block m-0" style="font-size:13px">名</label>
-            @error('under_name')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
               <div class="border-bottom border-primary" style="width:140px;">
                 <input type="text" style="width:140px;" class="border-0 under_name" name="under_name">
               </div>
             </div>
           </div>
+
           <div class="d-flex mt-3" style="justify-content:space-between">
+            @error('over_name_kana')
+              <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
             <div class="" style="width:140px">
               <label class="d-block m-0" style="font-size:13px">セイ</label>
-            @error('over_name_kana')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
               <div class="border-bottom border-primary" style="width:140px;">
                 <input type="text" style="width:140px;" class="border-0 over_name_kana" name="over_name_kana">
               </div>
             </div>
+            @error('under_name_kana')
+              <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
             <div class="" style="width:140px">
               <label class="d-block m-0" style="font-size:13px">メイ</label>
-            @error('under_name_kana')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
               <div class="border-bottom border-primary" style="width:140px;">
                 <input type="text" style="width:140px;" class="border-0 under_name_kana" name="under_name_kana">
               </div>
             </div>
           </div>
+
+          @error('mail_address')
+              <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
           <div class="mt-3">
             <label class="m-0 d-block" style="font-size:13px">メールアドレス</label>
-            @error('mail_address')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
             <div class="border-bottom border-primary">
               <input type="mail" class="w-100 border-0 mail_address" name="mail_address">
             </div>
@@ -206,13 +199,10 @@
             <input type="password" class="border-0 w-100 password" name="password">
           </div>
         </div>
-        @error('password')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
         <div class="mt-3">
           <label class="d-block m-0" style="font-size:13px">確認用パスワード</label>
           <div class="border-bottom border-primary">
-            <input type="password" class="border-0 w-100 password_confirmation" name="password">
+            <input type="password" class="border-0 w-100 password_confirmation" name="password_confirmation">
           </div>
         </div>
         <div class="mt-5 text-right">

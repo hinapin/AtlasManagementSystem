@@ -21,9 +21,16 @@ li {
   display: block;
 }
 
+.d-flex {
+  padding: 3px;
+}
 
 .border {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.reg-pa {
+  padding: 20px;
 }
 
 .text-center {

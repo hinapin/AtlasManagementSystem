@@ -59,6 +59,20 @@ class RegisterController extends Controller
 
     public function registerPost(Request $request)
     {
+
+        $request->validate([
+                'over_name' => 'required|string|max:10',
+                'under_name' => 'required|string|max:10',
+                'over_name_kana' => 'required|string|regex:/^[ァ-ヶ　]+$/u|max:30',
+                'under_name_kana' => 'required|string|regex:/^[ァ-ヶ　]+$/u|max:30',
+                'mail_address' => 'required|unique:users|email:rfc|min:5|max:40',
+                'sex' => 'required',
+                'birth_day' => 'required|after_or_equal:2000-01-01',
+                'role' => 'required',
+                'password' => 'required|confirmed|min:8|max:30',
+            ]);
+
+        // ここからここまでが一連の登録や更新処理であると言うのを示すのに用いるのがtransaction（トランザクション）↓
         DB::beginTransaction();
         try{
             $old_year = $request->old_year;
@@ -81,17 +95,6 @@ class RegisterController extends Controller
                 'password' => bcrypt($request->password)
             ]);
 
-            // $request->validate([
-            //     'over_name' => 'required|string|max:10',
-            //     'under_name' => 'required|string|max:10',
-            //     'over_name_kana' => 'required|string|regex:/^[ァ-ヶ　]+$/u|max:30',
-            //     'under_name_kana' => 'required|string|regex:/^[ァ-ヶ　]+$/u|max:30',
-            //     'mail_address' => 'required|unique:users|email:rfc|min:5|max:40',
-            //     'sex' => 'required',
-            //     'birth_day' => 'required|after_or_equal:2000-01-01',
-            //     'role' => 'required',
-            //     'password' => 'required|confirmed|min:8|max:30',
-            // ]);
 
             $user = User::findOrFail($user_get->id);
             $user->subjects()->attach($subjects);
