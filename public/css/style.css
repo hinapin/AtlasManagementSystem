@@ -21,6 +21,11 @@ li {
   display: block;
 }
 
+.error-message {
+  color: #FF0000;
+  font-size: small;
+}
+
 .d-flex {
   padding: 3px;
 }
