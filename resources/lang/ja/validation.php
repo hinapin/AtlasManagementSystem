@@ -160,7 +160,7 @@ return [
         'under_name'=>'名',
         'over_name_kana'=>'セイ',
         'under_name_kana'=>'メイ',
-        'birth_day' =>'生年月日',
+        'datetime_validation' =>'生年月日',
     ],
 
 ];

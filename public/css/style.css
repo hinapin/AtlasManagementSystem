@@ -43,11 +43,21 @@ li {
 }
 
 /* サイドバー */
+
+.menu {
+  display: flex;
+}
+
+.images {
+  margin: 0 8px 5px 0;
+}
+
 .sidebar {
-  width: 150px;
+  width: 250px;
   height: 100vh;
   background-color: #03AAD2;
   font-weight: bold;
+  padding: 10px;
 }
 
 .main-container {

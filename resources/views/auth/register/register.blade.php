@@ -81,7 +81,7 @@
           <input type="radio" name="sex" class="sex" value="3">
           <label style="font-size:13px">その他</label>
         </div>
-        @error('birth_day')
+        @error('datetime_validation')
             <div class="error-message">{{ $message }}</div>
         @enderror
         <div class="mt-3">

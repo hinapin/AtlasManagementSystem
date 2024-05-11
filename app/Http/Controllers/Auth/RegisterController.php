@@ -9,9 +9,11 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use App\Http\Requests\RegisterRequest;
 use DB;
 
 use App\Models\Users\Subjects;
+
 
 class RegisterController extends Controller
 {
@@ -57,21 +59,9 @@ class RegisterController extends Controller
         return view('auth.register.register', compact('subjects'));
     }
 
-    public function registerPost(Request $request)
+
+    public function registerPost(RegisterRequest $request)
     {
-
-        $request->validate([
-                'over_name' => 'required|string|max:10',
-                'under_name' => 'required|string|max:10',
-                'over_name_kana' => 'required|string|regex:/^[ァ-ヶ　]+$/u|max:30',
-                'under_name_kana' => 'required|string|regex:/^[ァ-ヶ　]+$/u|max:30',
-                'mail_address' => 'required|unique:users|email:rfc|min:5|max:40',
-                'sex' => 'required',
-                'birth_day' => 'required|date|after_or_equal:2000-01-01',
-                'role' => 'required',
-                'password' => 'required|confirmed|min:8|max:30',
-            ]);
-
         // ここからここまでが一連の登録や更新処理であると言うのを示すのに用いるのがtransaction（トランザクション）↓
         DB::beginTransaction();
         try{
