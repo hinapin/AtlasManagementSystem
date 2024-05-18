@@ -7,10 +7,15 @@
         <div class="detail_inner_head">
           <div>
           </div>
+          <!-- ログインユーザーのみ表示・・・・・・・・ -->
+          @if(Auth::user()->id == $post->user_id)
           <div>
             <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
-            <a href="{{ route('post.delete', ['id' => $post->id]) }}">削除</a>
+            <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">削除</span>
+
           </div>
+          @endif
+          <!-- ・・・・・・・・・・・・・・・・・・・・ -->
         </div>
 
         <div class="contributor d-flex">
@@ -67,6 +72,7 @@
           <a class="js-modal-close btn btn-danger d-inline-block" href="">閉じる</a>
           <input type="hidden" class="edit-modal-hidden" name="post_id" value="">
           <input type="submit" class="btn btn-primary d-block" value="編集">
+          <input type="submit" class="btn btn-primary d-block"  value="削除" href="{{ route('post.delete', ['id' => $post->id]) }}">
         </div>
       </div>
       {{ csrf_field() }}

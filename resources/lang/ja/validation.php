@@ -161,6 +161,10 @@ return [
         'over_name_kana'=>'セイ',
         'under_name_kana'=>'メイ',
         'datetime_validation' =>'生年月日',
+        'post_category_id' =>'カテゴリー',
+        'post_title' =>'タイトル',
+        'post_body' =>'本文',
+
     ],
 
 ];

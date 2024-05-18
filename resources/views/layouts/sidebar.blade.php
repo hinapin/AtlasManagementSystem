@@ -36,7 +36,8 @@
 
       <!-- 講師アカウントにだけ表示させる・・・・・ -->
 
-
+      @if(Auth::user()->role >= 1 && Auth::user()->role <= 3)
+      <!-- バリュー属性が1 以上かつ 3 以下である場合に、表示させる -->
 
       <div class="menu">
         <div><img src="{{ asset('/image/icon4.png')}}" width="20px" height="20px" class="images"></div>
@@ -48,7 +49,7 @@
         <p><a href="{{ route('calendar.admin.setting',['user_id' => Auth::id()]) }}">スクール枠登録</a></p>
       </div>
 
-
+      @endif
 
       <!-- ・・・・・・・・・・・・・・・・・・・・ -->
 

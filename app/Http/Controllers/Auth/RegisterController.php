@@ -88,6 +88,7 @@ class RegisterController extends Controller
 
             $user = User::findOrFail($user_get->id);
             $user->subjects()->attach($subjects);
+
             DB::commit();
             return view('auth.login.login');
         }catch(\Exception $e){
