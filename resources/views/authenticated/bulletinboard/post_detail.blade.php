@@ -3,6 +3,13 @@
 <div class="vh-100 d-flex">
   <div class="w-50 mt-5">
     <div class="m-3 detail_container">
+      @error('post_title')
+              <div class="error-message">{{ $message }}</div>
+      @enderror
+
+      @error('post_body')
+              <div class="error-message">{{ $message }}</div>
+      @enderror
       <div class="p-3">
         <div class="detail_inner_head">
           <div>
@@ -10,8 +17,11 @@
           <!-- ログインユーザーのみ表示・・・・・・・・ -->
           @if(Auth::user()->id == $post->user_id)
           <div>
-            <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
-            <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">削除</span>
+            <span class="edit-modal-open btn btn-primary btn-sm" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
+
+            <!-- <span class="btn btn-danger" href="{{ route('post.delete', ['id' => $post->id]) }}" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</span> -->
+
+            <a class="btn btn-danger btn-sm" href="{{ route('post.delete', ['id' => $post->id]) }}" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</a>
 
           </div>
           @endif
@@ -26,6 +36,8 @@
           </p>
           <span class="ml-5">{{ $post->created_at }}</span>
         </div>
+
+
         <div class="detsail_post_title">{{ $post->post_title }}</div>
         <div class="mt-3 detsail_post">{{ $post->post }}</div>
       </div>
@@ -72,7 +84,6 @@
           <a class="js-modal-close btn btn-danger d-inline-block" href="">閉じる</a>
           <input type="hidden" class="edit-modal-hidden" name="post_id" value="">
           <input type="submit" class="btn btn-primary d-block" value="編集">
-          <input type="submit" class="btn btn-primary d-block"  value="削除" href="{{ route('post.delete', ['id' => $post->id]) }}">
         </div>
       </div>
       {{ csrf_field() }}

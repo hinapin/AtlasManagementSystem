@@ -57,13 +57,21 @@ class PostsController extends Controller
         return redirect()->route('post.show');
     }
 
+    // 編集ーーーーーー
     public function postEdit(Request $request){
+
+        $request->validate([
+            'post_title' => 'required|string|max:100',
+            'post_body' => 'required|string|max:5000',
+        ]);
+
         Post::where('id', $request->post_id)->update([
             'post_title' => $request->post_title,
             'post' => $request->post_body,
         ]);
         return redirect()->route('post.detail', ['id' => $request->post_id]);
     }
+    // ーーーーーーーー
 
     public function postDelete($id){
         Post::findOrFail($id)->delete();
