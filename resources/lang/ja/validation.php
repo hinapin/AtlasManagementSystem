@@ -164,7 +164,7 @@ return [
         'post_category_id' =>'カテゴリー',
         'post_title' =>'タイトル',
         'post_body' =>'本文',
-
+        'comment' =>'コメント',
     ],
 
 ];

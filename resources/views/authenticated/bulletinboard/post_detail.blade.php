@@ -7,6 +7,10 @@
               <div class="error-message">{{ $message }}</div>
       @enderror
 
+      @error('comment')
+              <div class="error-message">{{ $message }}</div>
+      @enderror
+
       @error('post_body')
               <div class="error-message">{{ $message }}</div>
       @enderror

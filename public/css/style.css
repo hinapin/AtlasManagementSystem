@@ -172,7 +172,8 @@ li {
 }
 
 .post_bottom_area {
-  justify-content: space-between;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .like_btn,
