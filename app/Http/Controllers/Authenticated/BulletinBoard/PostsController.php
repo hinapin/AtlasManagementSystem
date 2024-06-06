@@ -18,6 +18,7 @@ class PostsController extends Controller
     public function show(Request $request){
         $posts = Post::with('user', 'postComments')->get();
         $categories = MainCategory::get();
+        // ↓新しいLikeモデルのインスタンスを作成するための文
         $like = new Like;
         $post_comment = new Post;
         if(!empty($request->keyword)){
