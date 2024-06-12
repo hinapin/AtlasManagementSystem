@@ -86,7 +86,7 @@ class PostsController extends Controller
     public function commentCreate(Request $request){
 
         $request->validate([
-            'comment' => 'required|string|max:2500',
+            'comment' => 'required|string|max:10',
         ]);
 
         PostComment::create([
