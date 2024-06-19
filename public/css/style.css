@@ -259,6 +259,10 @@ li {
   border-radius: 10px;
 }
 
+.category1 {
+  margin: 0 0 20px 0;
+}
+
 .category_box {
   border-radius: 5px;
   padding: 3px;
@@ -280,6 +284,10 @@ li {
 .sub_categories li input {
   list-style: none;
   cursor: pointer;
+}
+
+.category_a {
+  margin-top: 8px;
 }
 
 /* ユーザー検索 */

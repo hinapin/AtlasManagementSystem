@@ -9,7 +9,7 @@
         @foreach($main_categories as $main_category)
         <optgroup label="{{ $main_category->main_category }}"></optgroup>
         <!-- サブカテゴリー表示 -->
-        </optgroup>
+
         @endforeach
       </select>
     </div>
@@ -33,15 +33,35 @@
     <form action="{{ route('post.create') }}" method="post" id="postCreate">{{ csrf_field() }}</form>
   </div>
   @can('admin')
-  <div class="w-25 ml-auto mr-auto">
+  <div class="w-900 ml-auto mr-auto">
     <div class="category_area mt-5 p-5">
-      <div class="">
-        <p class="m-0">メインカテゴリー</p>
-        <input type="text" class="w-100" name="main_category_name" form="mainCategoryRequest">
-        <input type="submit" value="追加" class="w-100 btn btn-primary p-0" form="mainCategoryRequest">
+      <div class="category1">
+        <form id="mainCategoryRequest" action="{{ route('main.category.create') }}" method="POST">
+          @csrf
+          <p class="m-0">メインカテゴリー</p>
+          <input type="text" class="w-100 category_a" name="main_category_name">
+          <input type="submit" value="追加" class="w-100 btn btn-primary p-0 category_a">
+        </form>
       </div>
       <!-- サブカテゴリー追加 -->
-      <form action="{{ route('main.category.create') }}" method="post" id="mainCategoryRequest">{{ csrf_field() }}</form>
+      <div class="">
+        <form id="mainCategoryRequest" action="{{ route('sub.category.create') }}" method="POST">
+          @csrf
+          <p class="m-0">サブカテゴリー</p>
+          <input type="text" class="w-100 category_a" name="sub_category_name">
+
+        <!-- 追加したとこ・・・・・ -->
+          <select class="w-100 category_a" form="postCreate" name="post_category_id">
+          @foreach($main_categories as $main_category)
+          <optgroup><option label="{{ $main_category->main_category }}"></option>
+          </optgroup>
+          <!-- メインカテゴリー表示 -->
+          @endforeach
+          </select>
+          <!-- ・・・・・・・・・・・ -->
+          <input type="submit" value="追加" class="w-100 btn btn-primary p-0 category_a" form="mainCategoryRequest">
+        </form>
+      </div>
     </div>
   </div>
   @endcan
