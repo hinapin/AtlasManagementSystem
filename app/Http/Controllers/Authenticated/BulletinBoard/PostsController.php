@@ -36,6 +36,8 @@ class PostsController extends Controller
             $posts = Post::with('user', 'postComments')
             ->where('user_id', Auth::id())->get();
         }
+        // dd($posts);
+
         return view('authenticated.bulletinboard.posts', compact('posts', 'categories', 'like', 'post_comment'));
     }
 
@@ -50,12 +52,20 @@ class PostsController extends Controller
     }
 
     public function postCreate(PostFormRequest $request){
+
         $post = Post::create([
             'user_id' => Auth::id(),
             'post_title' => $request->post_title,
-            'post' => $request->post_body
+            'post' => $request->post_body,
+            'post_category_id' => $request->post_category_id,
         ]);
-        return redirect()->route('post.show');
+
+        $post->subCategories()->attach($request->post_category_id);
+
+
+
+        // post_category_idをビューに渡す
+        return redirect()->route('post.show', ['post_category_id' => $request->post_category_id]);
     }
 
     // 編集ーーーーーー
@@ -85,11 +95,12 @@ class PostsController extends Controller
         // dd($request->all());
 
         $request->validate([
-            'main_category_name' => 'required|string|max:100'
+            'main_category_name' => 'required|string|max:100|unique:main_categories,main_category'
         ]);
 
 
-        MainCategory::create(['main_category' => $request->main_category_name]);
+        MainCategory::create([
+            'main_category' => $request->main_category_name]);
         return redirect()->route('main.category.create');
     }
 
@@ -100,11 +111,14 @@ class PostsController extends Controller
         // dd($request->all());
 
         $request->validate([
-            'sub_category_name' => 'required|string|max:100'
+            'sub_category_name' => 'required|string|max:100|unique:sub_categories,sub_category',
+            'main_category_id' => 'required|exists:main_categories,id',
         ]);
 
-
-        MainCategory::create(['sub_category' => $request->sub_category_name]);
+        SubCategory::create([
+            'sub_category' => $request->sub_category_name,
+            'main_category_id' => $request->main_category_id,
+        ]);
         return redirect()->route('sub.category.create');
     }
 

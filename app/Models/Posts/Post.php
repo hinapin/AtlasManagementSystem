@@ -13,7 +13,7 @@ class Post extends Model
         'user_id',
         'post_title',
         'post',
-        // 'main_category',
+        'post_category_id',
     ];
 
     public function user(){
@@ -26,6 +26,7 @@ class Post extends Model
 
     public function subCategories(){
         // リレーションの定義
+        return $this->belongsToMany('App\Models\Categories\SubCategory','post_sub_categories');
     }
 
 // 追加 Likeモデルとのリレーション・・・

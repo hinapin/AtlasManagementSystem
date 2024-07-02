@@ -11,6 +11,7 @@ class SubCategory extends Model
     protected $fillable = [
         'main_category_id',
         'sub_category',
+        'post_category_id',
     ];
     public function mainCategory(){
         // リレーションの定義
@@ -19,5 +20,6 @@ class SubCategory extends Model
 
     public function posts(){
         // リレーションの定義
+        return $this->belongsToMany('App\Models\Posts\Post','post_id');
     }
 }

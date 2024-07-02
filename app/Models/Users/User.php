@@ -31,7 +31,8 @@ class User extends Authenticatable
         'sex',
         'birth_day',
         'role',
-        'password'
+        'password',
+        'sub_category_id',
     ];
 
     protected $dates = ['deleted_at'];

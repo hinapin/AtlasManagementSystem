@@ -162,6 +162,13 @@ li {
   white-space: pre-wrap;
 }
 
+.subcategory {
+  background-color: #03AAD2;
+  border-radius: 10px;
+  color: #FFF;
+  padding: 5px;
+}
+
 .detail_container {
   background: #FFF;
 }
@@ -192,7 +199,65 @@ li {
 }
 
 .post-btn {
-  background-color: #03AAD2;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  background: #03AAD2;
+}
+
+/* .btn {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.6;
+}
+
+button.btn.post {
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  padding: 0 20px;
+  border-radius: 5px;
+  background: linear-gradient(to left, #0a99ca, #00b4db);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+} */
+
+
+.post-font {
+  color: #fff;
+  border: none;
+  text-decoration-line: none;
+}
+
+.keyword {
+  display: flex !important;
+  height: 45px;
+}
+
+/* .button[type="submit"] {
+  border-radius: 0 5px 5px 0;
+} */
+
+/* .pl-3 {
+  padding-left: 0 !important;
+} */
+
+.search-ipt {
+  border: #9E9E9E;
+  background-color: #EEEEEE;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-btn {
+  border: none;
+  background: #03AAD2;
+  border-radius: 0 5px 5px 0;
 }
 
 /* 掲示板 詳細画面 */

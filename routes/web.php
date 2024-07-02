@@ -48,6 +48,7 @@ Route::group(['middleware' => 'auth'], function(){
             Route::post('/main_category/create', 'PostsController@mainCategoryCreate')->name('main.category.create');
             Route::get('/main_category/create', 'PostsController@mainCategoryCreate')->name('main.category.create');
             Route::post('/create/sub_category', 'PostsController@subCategoryCreate')->name('sub.category.create');
+            Route::get('/create/sub_category', 'PostsController@subCategoryCreate')->name('sub.category.create');
             Route::get('/bulletin_board/post/{id}', 'PostsController@postDetail')->name('post.detail');
             Route::post('/bulletin_board/edit', 'PostsController@postEdit')->name('post.edit');
             Route::get('/bulletin_board/delete/{id}', 'PostsController@postDelete')->name('post.delete');

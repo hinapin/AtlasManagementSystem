@@ -165,6 +165,8 @@ return [
         'post_title' =>'タイトル',
         'post_body' =>'本文',
         'comment' =>'コメント',
+        'main_category_name'=>'メインカテゴリー',
+        'sub_category_name'=>'サブカテゴリー',
     ],
 
 ];
