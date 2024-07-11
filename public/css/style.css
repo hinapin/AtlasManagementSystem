@@ -336,13 +336,50 @@ button.btn.post {
   color: #FFF;
 }
 
-.category_btn {
-  font-size: 12px;
-  border-radius: 5px;
-  padding: 0 5px;
+.d-flex-a {
+  margin: 5px 1px 0 1px;
+}
+
+.search_form {
+  display: flex !important;
+}
+
+.search_box {
+  border-radius: 5px 0 0 5px;
   border: none;
-  background: #999;
+  background-color: #F0F0F0;
+}
+
+.search_btn {
+  background-color: #03AAD2;
+  border-radius: 0 5px 5px 0;
   color: #FFF;
+  border: none;
+  padding: 0 25px;
+}
+
+.posts-btn {
+  display: flex;
+  margin: 10px 0 0 0;
+}
+
+.category_btn {
+  width: calc(50% - 2px);
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 10px 4px;
+  margin: 0 5px 0 0;
+  border: none;
+  color: #FFF;
+}
+
+.like_post_btn {
+  background-color: #e17397;
+}
+
+.my_post_btn {
+  background-color: #eeb12e;
 }
 
 .main_categories span,
@@ -394,4 +431,8 @@ button.btn.post {
 
 .subject_inner {
   display: none;
+}
+
+.search_subject {
+  display: flexbox;
 }
