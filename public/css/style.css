@@ -347,7 +347,7 @@ button.btn.post {
 .search_box {
   border-radius: 5px 0 0 5px;
   border: none;
-  background-color: #F0F0F0;
+  background-color: transparent;
 }
 
 .search_btn {
@@ -390,6 +390,33 @@ button.btn.post {
 
 .category_a {
   margin-top: 8px;
+}
+
+.sub_side {
+  border: none;
+  background-color: transparent;
+}
+
+.sub_side_area {
+  margin: 10px 20px;
+}
+
+div.b-color {
+  background-color: #727272;
+  width: auto;
+  height: 4px;
+  opacity: 20%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+div.b-color2 {
+  background-color: #727272;
+  width: auto;
+  height: 3px;
+  opacity: 20%;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 /* ユーザー検索 */

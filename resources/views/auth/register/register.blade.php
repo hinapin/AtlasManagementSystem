@@ -17,12 +17,14 @@
     <div class="w-100 vh-100 d-flex" id="reg-pa" style="align-items:center; justify-content:center;">
       <div class="w-45 vh-75 border p-3" style="border-radius: 10px;">
         <div class="register_form">
+
           @error('over_name')
               <div class="error-message">{{ $message }}</div>
           @enderror
           @error('under_name')
               <div class="error-message">{{ $message }}</div>
           @enderror
+
           <div class="d-flex mt-3" style="justify-content:space-between">
             <div class="" style="width:140px">
               <label class="d-block m-0" style="font-size:13px">姓</label>
