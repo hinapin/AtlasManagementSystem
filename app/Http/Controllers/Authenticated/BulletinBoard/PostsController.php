@@ -116,7 +116,7 @@ class PostsController extends Controller
             'main_category' => $request->main_category_name,
         ]);
 
-        return redirect()->route('main.category.create');
+        return redirect()->route('post.input');
     }
 
     // 追加したサブカテゴリー追加メソッド///

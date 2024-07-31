@@ -26,6 +26,13 @@ class SelectNames implements DisplayUsers{
     ->whereIn('role', $role)
     ->orderBy('over_name_kana', $updown)->get();
 
+    if (!empty($subjects)) {
+            $query->whereHas('subjects', function ($q) use ($subjects) {
+                $q->whereIn('subject_id', $subjects);
+            });
+        }
+
+
     return $users;
   }
 }

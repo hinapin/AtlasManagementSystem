@@ -96,7 +96,7 @@
             <div class="search_subject">
               @foreach($subjects as $subject)
               <label>　{{ $subject->subject }}</label>
-              <input type="checkbox" name="subject[]" value="{{ $subject->id }}">
+              <input type="checkbox" name="subject[]" value="{{ $subject->id }}" form="userSearchRequest">
               @endforeach
             </div>
           </div>
