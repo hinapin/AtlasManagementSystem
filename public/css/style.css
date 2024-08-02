@@ -198,13 +198,6 @@ li {
   color: red;
 }
 
-.post-btn {
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-  background: #03AAD2;
-}
-
 /* .btn {
   display: inline-block;
   vertical-align: middle;
@@ -337,7 +330,7 @@ button.btn.post {
 }
 
 .d-flex-a {
-  margin: 5px 1px 0 1px;
+  display: flex;
 }
 
 .search_form {
@@ -362,6 +355,7 @@ button.btn.post {
   display: flex;
   margin: 10px 0 0 0;
 }
+
 
 .category_btn {
   width: calc(50% - 2px);
@@ -404,7 +398,7 @@ button.btn.post {
 div.b-color {
   background-color: #727272;
   width: auto;
-  height: 4px;
+  height: 3px;
   opacity: 20%;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -428,7 +422,7 @@ div.b-color2 {
   height: 80vh;
   overflow: scroll;
   padding: 10px;
-  background: #FFF;
+  background-color: transparent;
   border-radius: 5px;
 }
 
@@ -439,6 +433,16 @@ div.b-color2 {
 .one_person {
   width: 250px;
   height: 250px;
+  margin: 4px;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 20px;
+  line-height: 25px;
+}
+
+.search_lavel {
+  font-size: medium;
+  color: #03AAD2;
 }
 
 .search_conditions span {
@@ -462,4 +466,46 @@ div.b-color2 {
 
 .search_subject {
   display: flexbox;
+}
+
+.free_word {
+  background-color: #EBECF0;
+  border-radius: 5px;
+  width: 200px;
+  height: 40px;
+  padding: 0 5px;
+  border: none;
+}
+
+.select {
+  background-color: #EBECF0;
+  border-radius: 5px;
+  width: 80px;
+  height: 30px;
+  padding: 0 5px;
+  border: none;
+}
+
+.user_search_btn {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  background: #03AAD2;
+  height: 40px;
+  width: 200px;
+  color: #EBECF0;
+  border-radius: 5px;
+  border: none;
+}
+
+.reset {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  height: 40px;
+  width: 200px;
+  color: #03AAD2;
+  border-radius: 5px;
+  border: none;
+  background-color: transparent;
 }
