@@ -312,6 +312,11 @@ button.btn.post {
 }
 
 /* 掲示板　カテゴリー */
+.other_area {
+  margin-top: 50px;
+  position: relative;
+}
+
 .category_area {
   background: #FFF;
   border-radius: 10px;
@@ -331,6 +336,8 @@ button.btn.post {
 
 .d-flex-a {
   display: flex;
+  margin-bottom: 15px;
+  margin: 0 auto;
 }
 
 .search_form {
@@ -353,9 +360,20 @@ button.btn.post {
 
 .posts-btn {
   display: flex;
-  margin: 10px 0 0 0;
+  margin: 10px 0 15px 0;
 }
 
+.post-btn {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  background: #03AAD2;
+  margin-bottom: 15px;
+}
+
+.categorytitle {
+  margin-bottom: 15px;
+}
 
 .category_btn {
   width: calc(50% - 2px);
@@ -414,6 +432,11 @@ div.b-color2 {
 }
 
 /* ユーザー検索 */
+
+.search_content {
+  margin: 30px 0 0 0;
+}
+
 .reserve_users_area {
   display: flex;
   flex-wrap: wrap;
@@ -440,9 +463,21 @@ div.b-color2 {
   line-height: 25px;
 }
 
+.search_category {
+  margin: 0 0 15px 0;
+}
+
 .search_lavel {
   font-size: medium;
   color: #03AAD2;
+  margin: 0 0 10px 0;
+}
+
+.search_lavel_1 {
+  font-size: large;
+  font-weight: bold;
+  color: #03AAD2;
+  margin: 0 0 10px 0;
 }
 
 .search_conditions span {
@@ -451,13 +486,17 @@ div.b-color2 {
 
 .search_conditions_inner {
   display: none;
-  background: #FFF;
+  background-color: transparent;
 }
 
 .subject_edit_btn {
   font-size: 12px;
   color: #0000FF;
   cursor: pointer;
+}
+
+.profile-subject {
+  display: flex;
 }
 
 .subject_inner {
@@ -490,6 +529,7 @@ div.b-color2 {
   font-size: 16px;
   font-weight: 600;
   text-align: center;
+  margin: 10px 0;
   background: #03AAD2;
   height: 40px;
   width: 200px;
@@ -508,4 +548,62 @@ div.b-color2 {
   border-radius: 5px;
   border: none;
   background-color: transparent;
+}
+
+.b-color3 {
+  background-color: #727272;
+  width: 200px;
+  height: 3px;
+  opacity: 20%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
+
+.categories_conditions_inner {
+  display: none;
+  background-color: transparent;
+}
+
+
+.categories_accordion::after {
+  border-right: solid 2px #727272;
+  border-top: solid 2px #727272;
+  content: "";
+  display: inline-flex;
+  justify-content: flex-end;
+  height: 8px;
+  position: relative;
+  transform: rotate(135deg);
+  transition: transform .3s ease-in-out, top .3s ease-in-out;
+  width: 8px;
+  /* margin: 0 0 4px 160px; */
+  margin-left: 65%;
+  text-align: right;
+}
+
+.categories_accordion.open::after {
+  top: 45%;
+  transform: rotate(-45deg);
+}
+
+.search_accordion::after {
+  border-right: solid 2px #727272;
+  border-top: solid 2px #727272;
+  content: "";
+  display: inline-flex;
+  justify-content: flex-end;
+  height: 8px;
+  position: relative;
+  transform: rotate(135deg);
+  transition: transform .3s ease-in-out, top .3s ease-in-out;
+  width: 8px;
+  margin-left: 25%;
+  text-align: right;
+}
+
+.search_accordion.open::after {
+  top: 45%;
+  transform: rotate(-45deg);
 }

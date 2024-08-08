@@ -1,8 +1,8 @@
 @extends('layouts.sidebar')
 
 @section('content')
-<p>ユーザー検索</p>
-<div class="search_content w-100 border d-flex">
+<!-- <p>ユーザー検索</p> -->
+<div class="search_content w-100  d-flex">
   <div class="reserve_users_area">
     @foreach($users as $user)
     <div class="border one_person">
@@ -55,20 +55,20 @@
     </div>
     @endforeach
   </div>
-  <div class="search_area w-25 border">
+  <div class="search_area w-25">
     <div class="">
-      <div>
-        <lavel class="search_lavel">検索</lavel><br>
+      <div class="search_category">
+        <lavel class="search_lavel_1">検索</lavel><br>
         <input type="text" class="free_word" name="keyword" placeholder="キーワードを検索" form="userSearchRequest">
       </div>
-      <div>
+      <div class="search_category">
         <lavel class="search_lavel">カテゴリ</lavel><br>
         <select form="userSearchRequest" name="category" class="select">
           <option value="name">名前</option>
           <option value="id">社員ID</option>
         </select>
       </div>
-      <div>
+      <div class="search_category">
         <label class="search_lavel">並び替え</label><br>
         <select class="select" name="updown" form="userSearchRequest">
           <option value="ASC">昇順</option>
@@ -76,29 +76,30 @@
         </select>
       </div>
       <div class="">
-        <p class="m-0 search_conditions search_lavel"><span>検索条件の追加</span></p>
+        <p class="m-0 search_conditions search_lavel search_accordion"><span>検索条件の追加</span></p>
+        <div class="b-color3"></div>
         <div class="search_conditions_inner">
-          <div>
-            <label>性別</label>
+          <div class="search_category">
+            <label class="search_lavel">性別</label><br>
             <span>男</span><input type="radio" name="sex" value="1" form="userSearchRequest">
             <span>女</span><input type="radio" name="sex" value="2" form="userSearchRequest">
             <span>その他</span><input type="radio" name="sex" value="3" form="userSearchRequest">
           </div>
-          <div>
-            <label>権限</label>
-            <select name="role" form="userSearchRequest" class="engineer">
+          <div class="search_category">
+            <label class="search_lavel">権限</label><br>
+            <select name="role" form="userSearchRequest" class="engineer select">
               <option selected disabled>----</option>
               <option value="1">教師(国語)</option>
               <option value="2">教師(数学)</option>
               <option value="3">教師(英語)</option>
               <option value="4" class="">生徒</option>
             </select>
-          </div>
+          </div class="search_category">
           <div class="selected_engineer">
-            <label>選択科目</label>
+            <label class="search_lavel">選択科目</label><br>
             <div class="search_subject">
               @foreach($subjects as $subject)
-              <label>　{{ $subject->subject }}</label>
+              <label>{{ $subject->subject }}</label>
               <input type="checkbox" name="subject[]" value="{{ $subject->id }}" form="userSearchRequest">
               @endforeach
             </div>
