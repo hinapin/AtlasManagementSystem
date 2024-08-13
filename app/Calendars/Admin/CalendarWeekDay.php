@@ -31,13 +31,18 @@ class CalendarWeekDay{
 
     $html[] = '<div class="text-left">';
     if($one_part){
-      $html[] = '<p class="day_part m-0 pt-1">1部</p>';
+      $one_part_count = $one_part->users->count();
+      // 必要なパラメータdateとpartをroute()関数に渡す
+      $html[] = '<p class="day_part m-0 pt-1"><a href="'. route('calendar.admin.detail', ['date' => $ymd, 'part' => 1]) .'">１部</a>　　　　' . $one_part_count . '</p>';
+
     }
     if($two_part){
-      $html[] = '<p class="day_part m-0 pt-1">2部</p>';
+      $two_part_count = $two_part->users->count();
+      $html[] = '<p class="day_part m-0 pt-1"><a href="'. route('calendar.admin.detail', ['date' => $ymd, 'part' => 2]) .'">２部</a>　　　　' . $two_part_count . '</p>';
     }
     if($three_part){
-      $html[] = '<p class="day_part m-0 pt-1">3部</p>';
+      $three_part_count = $three_part->users->count();
+      $html[] = '<p class="day_part m-0 pt-1"><p class="day_part m-0 pt-1"><a href="'. route('calendar.admin.detail', ['date' => $ymd, 'part' => 3]) .'">３部</a>　　　　' . $three_part_count . '</p>';
     }
     $html[] = '</div>';
 

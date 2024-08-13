@@ -42,6 +42,7 @@ li {
   margin-bottom: 20px;
 }
 
+
 /* サイドバー */
 
 .menu {
@@ -91,6 +92,10 @@ li {
   color: #FF0000;
 }
 
+.day_b {
+  margin-bottom: 0px;
+}
+
 .past-day {
   background: #EEE;
 }
@@ -119,6 +124,11 @@ li {
 .adjust-table-btn {
   width: 70%;
 }
+
+.reserve {
+  margin-top: 20px;
+}
+
 
 /* モーダル */
 .modal {

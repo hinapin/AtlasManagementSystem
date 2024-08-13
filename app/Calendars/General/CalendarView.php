@@ -39,9 +39,9 @@ class CalendarView{
       foreach($days as $day){
         $startDay = $this->carbon->copy()->format("Y-m-01");
         $toDay = $this->carbon->copy()->format("Y-m-d");
-
+        //  過去の日付かどうかの判定↓
         if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){
-          $html[] = '<td class="calendar-td">';
+          $html[] = '<td class="past-day calendar-td">';
         }else{
           $html[] = '<td class="calendar-td '.$day->getClassName().'">';
         }
@@ -56,15 +56,22 @@ class CalendarView{
           }else if($reservePart == 3){
             $reservePart = "リモ3部";
           }
+          // 過去の日付の場合
           if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){
-            $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px"></p>';
+            $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px">受付終了</p>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
-          }else{
+          }else{// 未来の日付の場合
             $html[] = '<button type="submit" class="btn btn-danger p-0 w-75" name="delete_date" style="font-size:12px" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
           }
         }else{
-          $html[] = $day->selectPart($day->everyDay());
+          // $html[] = $day->selectPart($day->everyDay());
+          if ($startDay <= $day->everyDay() && $toDay >= $day->everyDay()) {
+              $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px">受付終了</p>';
+              $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
+          } else { // 未来の日付の場合は選択欄を表示
+              $html[] = $day->selectPart($day->everyDay());
+          }
         }
         $html[] = $day->getDate();
         $html[] = '</td>';
