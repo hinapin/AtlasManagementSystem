@@ -129,6 +129,32 @@ li {
   margin-top: 20px;
 }
 
+.reserve-round {
+  background-color: #ffffff;
+  padding: 8px;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.reserve-list {
+  background-color: #ffffff;
+  padding: 5px;
+  /* border-radius: 10px; */
+  /* position: absolute; */
+  width: 600px;
+}
+
+.reserve-title {
+  position: relative;
+  color: #EEE;
+  width: 600px;
+  height: 35px;
+}
+
+.reserve-user {
+  height: 35px;
+}
+
 
 /* モーダル */
 .modal {
@@ -500,8 +526,8 @@ div.b-color2 {
 }
 
 .subject_edit_btn {
-  font-size: 12px;
-  color: #0000FF;
+  font-size: 15px;
+  color: #03AAD2;
   cursor: pointer;
 }
 
