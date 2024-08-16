@@ -526,13 +526,43 @@ div.b-color2 {
 }
 
 .subject_edit_btn {
-  font-size: 15px;
+  font-size: 16px;
   color: #03AAD2;
   cursor: pointer;
+  margin-top: 10px;
+}
+
+.edit-btn {
+  margin-left: 15px;
+}
+
+.select-subject {
+  margin-bottom: 10px;
+}
+
+.user_accordion::after {
+  border-right: solid 2px #03AAD2;
+  border-top: solid 2px #03AAD2;
+  content: "";
+  display: inline-flex;
+  justify-content: flex-end;
+  height: 8px;
+  position: relative;
+  transform: rotate(135deg);
+  transition: transform .3s ease-in-out, top .3s ease-in-out;
+  width: 8px;
+  margin-left: 10px;
+  text-align: right;
+}
+
+.user_accordion.open::after {
+  top: 45%;
+  transform: rotate(-45deg);
 }
 
 .profile-subject {
   display: flex;
+  margin-top: 10px;
 }
 
 .subject_inner {

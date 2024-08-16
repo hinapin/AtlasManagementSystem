@@ -10,8 +10,35 @@
       </div>
     </div>
     <div class="text-right w-75 m-auto">
-      <input type="submit" class="btn btn-primary reserve" value="予約する" form="reserveParts">
+      <input type="submit" class="btn btn-primary reserve" value="予約する" form="reserveParts" onclick="return confirm('本当に登録しますか？')">
     </div>
   </div>
 </div>
+
+<!-- モーダル -->
+<div class="modal js-modal">
+  <div class="modal__bg"></div>
+  <div class="modal__content">
+    <form action="{{ route('deleteParts') }}" method="post">
+      <div class="w-100">
+        <div class="modal-inner-title w-50 m-auto">
+          <!-- 予約日 -->
+          <p id="reserveDate"></p>
+        </div>
+        <div class="modal-inner-body w-50 m-auto pt-3 pb-3">
+          <!-- 予約時間　場所 -->
+          <p id="reserveTime">
+          <p id="reserveLocation"></p>
+        </div>
+        <div class="w-50 m-auto edit-modal-btn d-flex">
+          <a class="js-modal-close btn btn-danger d-inline-block" href="">閉じる</a>
+          <input type="hidden" class="edit-modal-hidden" name="post_id" value="">
+          <input type="submit" class="btn btn-primary d-block" value="キャンセル" onclick="return confirm('本当に予約をキャンセルしますか？')">
+        </div>
+      </div>
+      {{ csrf_field() }}
+    </form>
+  </div>
+</div>
+
 @endsection

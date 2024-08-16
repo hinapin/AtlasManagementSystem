@@ -31,3 +31,9 @@ $(function () {
     $(this).toggleClass("open", 300);
   });
 });
+
+$(function () {
+  $('.user_accordion').click(function () {
+    $(this).toggleClass("open", 300);
+  });
+});

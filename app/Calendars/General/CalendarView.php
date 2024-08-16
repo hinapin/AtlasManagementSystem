@@ -61,7 +61,8 @@ class CalendarView{
             $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px">受付終了</p>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
           }else{// 未来の日付の場合
-            $html[] = '<button type="submit" class="btn btn-danger p-0 w-75" name="delete_date" style="font-size:12px" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
+            // モーダル表示ボタンにする
+            $html[] = '<button type="button" class="btn btn-danger reserve-modal-open p-0 w-75" data-reserve-date="'. $day->everyDay() .'" data-reserve-time="'. $reservePart .'" data-reserve-location="リモート会議室" style="font-size:12px">'. $reservePart .'</button>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
           }
         }else{
