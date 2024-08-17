@@ -19,7 +19,7 @@
 <div class="modal js-modal">
   <div class="modal__bg"></div>
   <div class="modal__content">
-    <form action="{{ route('deleteParts') }}" method="post">
+    <form action="{{ route('calendar.general.cancel') }}" method="post">
       <div class="w-100">
         <div class="modal-inner-title w-50 m-auto">
           <!-- 予約日 -->
@@ -32,7 +32,8 @@
         </div>
         <div class="w-50 m-auto edit-modal-btn d-flex">
           <a class="js-modal-close btn btn-danger d-inline-block" href="">閉じる</a>
-          <input type="hidden" class="edit-modal-hidden" name="post_id" value="">
+          <input type="hidden" class="reserve-modal-hidden" name="reserve_date" value="">
+          <input type="hidden" class="reserve-modal-hidden" name="reserve_time" value="">
           <input type="submit" class="btn btn-primary d-block" value="キャンセル" onclick="return confirm('本当に予約をキャンセルしますか？')">
         </div>
       </div>
