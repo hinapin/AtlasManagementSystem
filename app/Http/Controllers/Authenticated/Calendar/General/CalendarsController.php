@@ -41,7 +41,7 @@ class CalendarsController extends Controller
         try {
             // フォームから送信された予約情報を取得
             $reserveDate = $request->reserve_date;
-            $reserveTime = $request->reserve_time;
+            $reserveTime = $this->convertReserveTimeToInt($request->reserve_time);
 
             // dd($reserveDate, $reserveTime);
 
@@ -52,7 +52,6 @@ class CalendarsController extends Controller
                                 ->first();
 
             // dd($reserve_settings);
-            // dd($reserve_settings->toSql(), $reserveDate, $reserveTime);
 
             if ($reserve_settings) {
                 // 予約を削除（ログインしているユーザーの予約のみキャンセル）
@@ -67,4 +66,20 @@ class CalendarsController extends Controller
         }
         return redirect()->route('calendar.general.show', ['user_id' => Auth::id()]);
     }
+
+    // "リモ3部" のような文字列を適切な数値（例: 1, 2, 3）に変換する必要がある。
+    //　"リモ3部" を 3 として扱う場合、対応する変換を行う。
+
+    private function convertReserveTimeToInt($reserveTime) {
+    // 予約時間を対応する整数に変換
+    switch ($reserveTime) {
+        case 'リモ1部':
+            return 1;
+        case 'リモ2部':
+            return 2;
+        case 'リモ3部':
+            return 3;
+    }
+    }
+
 }
