@@ -12,10 +12,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Oswald:wght@200&display=swap" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
-<body>
+<body style="background:#ECF1F6;">
   <form action="{{ route('registerPost') }}" method="POST">
     <div class="w-100 vh-100 d-flex" id="reg-pa" style="align-items:center; justify-content:center;">
-      <div class="w-45 vh-75 border p-3" style="border-radius: 10px;">
+      <div class="w-45 vh-75 border p-3"  style="border-radius: 10px; background-color: #FFFFFF;">
         <div class="register_form">
 
           @error('over_name')

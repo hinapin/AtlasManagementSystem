@@ -12,11 +12,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Oswald:wght@200&display=swap" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
-<body>
+<body class="body" style="background:#ECF1F6;">
   <form action="{{ route('loginPost') }}" method="POST">
-    <div class="w-100 vh-100 d-flex" id="login-page" style="align-items:center; justify-content:center;">
-      <div><img src="{{ asset('/image/atlas-black.png')}}" width="120px" height="40px"></div>
-      <div style="border-radius: 10px;" class="border vh-50 w-25">
+    <div class="login-page">
+      <div><img src="{{ asset('/image/atlas-black.png')}}" width="120px" height="40px" class="atlas-logo"></div>
+      <!-- ログイン入力 -->
+      <div style="border-radius: 10px; background-color: #FFFFFF;" class="border">
         <div class="w-75 m-auto pt-5">
           <label class="d-block m-0" style="font-size:13px;">メールアドレス</label>
           <div class="border-bottom border-primary w-100">
@@ -36,10 +37,10 @@
           <a href="{{ route('registerView') }}">新規登録はこちら</a>
         </div>
       </div>
+      <!-- ログイン入力 -->
       {{ csrf_field() }}
     </div>
   </form>
-  </div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="{{ asset('js/register.js') }}" rel="stylesheet"></script>
 </body>

@@ -17,8 +17,20 @@ li {
 }
 
 /* ログイン画面 */
-#login-page {
+
+.login-block {
   display: block;
+}
+
+.atlas-logo {
+  display: inline;
+  margin-bottom: 30px;
+  margin-left: 90px;
+}
+
+.login-page {
+  display: block;
+  margin: 180px 560px;
 }
 
 .error-message {
@@ -382,7 +394,7 @@ button.btn.post {
 
 .search_box {
   border-radius: 5px 0 0 5px;
-  border: none;
+  border-width: 0.5px;
   background-color: transparent;
 }
 
@@ -391,7 +403,8 @@ button.btn.post {
   border-radius: 0 5px 5px 0;
   color: #FFF;
   border: none;
-  padding: 0 25px;
+  font-size: medium;
+  /* padding: 0 px; */
 }
 
 .posts-btn {

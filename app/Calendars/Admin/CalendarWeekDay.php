@@ -42,7 +42,7 @@ class CalendarWeekDay{
     }
     if($three_part){
       $three_part_count = $three_part->users->count();
-      $html[] = '<p class="day_part m-0 pt-1"><p class="day_part m-0 pt-1"><a href="'. route('calendar.admin.detail', ['date' => $ymd, 'part' => 3]) .'">３部</a>　　　　' . $three_part_count . '</p>';
+      $html[] = '<p class="day_part m-0"><p class="day_part m-0 pt-1"><a href="'. route('calendar.admin.detail', ['date' => $ymd, 'part' => 3]) .'">３部</a>　　　　' . $three_part_count . '</p>';
     }
     $html[] = '</div>';
 
