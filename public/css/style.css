@@ -39,7 +39,7 @@ li {
 }
 
 .d-flex {
-  padding: 3px;
+  /* padding: 3px; */
 }
 
 .border {
@@ -51,6 +51,7 @@ li {
 }
 
 .text-center {
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 
@@ -67,7 +68,7 @@ li {
 
 .sidebar {
   width: 250px;
-  /* height: 100vh; */
+  height: 119vh;
   background-color: #03AAD2;
   font-weight: bold;
   padding: 10px;
@@ -114,6 +115,7 @@ li {
 
 .calendar-td {
   min-width: 100px;
+  border: 2px solid #dee2e6;
 }
 
 .day_part {
@@ -489,7 +491,7 @@ div.b-color2 {
 .reserve_users_area {
   display: flex;
   flex-wrap: wrap;
-  width: 800px;
+  width: 850px;
   margin: 10px auto;
   height: 80vh;
   overflow: scroll;
