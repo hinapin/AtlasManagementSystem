@@ -68,7 +68,7 @@ li {
 
 .sidebar {
   width: 250px;
-  height: 119vh;
+  height: 137vh;
   background-color: #03AAD2;
   font-weight: bold;
   padding: 10px;
@@ -273,7 +273,9 @@ button.btn.post {
 
 
 .post-font {
-  color: #fff;
+  color: #ffffff;
+  background-color: #03AAD2;
+  font-weight: bold;
   border: none;
   text-decoration-line: none;
 }

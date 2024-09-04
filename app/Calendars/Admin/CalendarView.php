@@ -20,13 +20,13 @@ class CalendarView{
     $html[] = '<table class="table m-auto border">';
     $html[] = '<thead>';
     $html[] = '<tr>';
-    $html[] = '<th class="border">月</th>';
-    $html[] = '<th class="border">火</th>';
-    $html[] = '<th class="border">水</th>';
-    $html[] = '<th class="border">木</th>';
-    $html[] = '<th class="border">金</th>';
-    $html[] = '<th class="border">土</th>';
-    $html[] = '<th class="border">日</th>';
+    $html[] = '<th class="calendar-td">月</th>';
+    $html[] = '<th class="calendar-td">火</th>';
+    $html[] = '<th class="calendar-td">水</th>';
+    $html[] = '<th class="calendar-td">木</th>';
+    $html[] = '<th class="calendar-td">金</th>';
+    $html[] = '<th class="calendar-td">土</th>';
+    $html[] = '<th class="calendar-td">日</th>';
     $html[] = '</tr>';
     $html[] = '</thead>';
     $html[] = '<tbody>';
@@ -40,9 +40,9 @@ class CalendarView{
         $toDay = $this->carbon->format("Y-m-d");
         //  過去の日付かどうかの判定↓
         if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){
-          $html[] = '<td class="past-day border">';
+          $html[] = '<td class="past-day" style="border: 2px solid #dee2e6;">';
         }else{
-          $html[] = '<td class="border '.$day->getClassName().'">';
+          $html[] = '<td class=" '.$day->getClassName().'" style="border: 2px solid #dee2e6;">';
         }
         $html[] = $day->render();
         $html[] = $day->dayPartCounts($day->everyDay());

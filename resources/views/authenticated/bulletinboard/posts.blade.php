@@ -28,7 +28,12 @@
   </div>
   <div class="other_area ">
     <div class="m-4">
-      <div class="vh-10 border p-3 post-btn" style="border-radius: 5px;"><a href="{{ route('post.input') }}" class="post-font">投稿</a></div>
+      <!-- <div class="vh-10 border p-3 post-btn" style="border-radius: 5px;"><a href="{{ route('post.input') }}" class="post-font">投稿</a></div> -->
+      <div class="vh-10 border p-3 post-btn" style="border-radius: 5px;">
+          <form action="{{ route('post.input') }}" method="GET" style="height: 100%; width: 100%;">
+              <input type="submit" class="post-font" value="投稿" style="display: block; height: 100%; width: 100%; border: none; background: none; padding: 0;">
+          </form>
+      </div>
 
       <div class="d-flex-a keyword">
         <form class="search_form" id="postSearchRequest" method="GET" action="{{ route('post.show') }}">
