@@ -109,8 +109,13 @@ li {
   margin-bottom: 0px;
 }
 
+.day-m {
+  margin-bottom: 10px;
+}
+
 .past-day {
   background: #EEE;
+
 }
 
 .calendar-td {
@@ -124,7 +129,7 @@ li {
 }
 
 .adjust-table {
-  width: 70% !important;
+  width: 95% !important;
 }
 
 .adjust-table td {

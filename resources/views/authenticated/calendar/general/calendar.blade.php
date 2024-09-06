@@ -8,9 +8,9 @@
       <div class="">
         {!! $calendar->render() !!}
       </div>
-    </div>
-    <div class="text-right w-75 m-auto">
-      <input type="submit" class="btn btn-primary reserve" value="予約する" form="reserveParts" onclick="return confirm('本当に登録しますか？')">
+      <div class="text-right m-auto">
+        <input type="submit" class="btn btn-primary reserve" value="予約する" form="reserveParts" onclick="return confirm('本当に登録しますか？')">
+      </div>
     </div>
   </div>
 </div>
