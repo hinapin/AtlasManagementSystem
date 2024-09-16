@@ -14,8 +14,8 @@
 </head>
 <body style="background:#ECF1F6;">
   <form action="{{ route('registerPost') }}" method="POST">
-    <div class="w-100 vh-100 d-flex" id="reg-pa" style="align-items:center; justify-content:center;">
-      <div class="w-45 vh-75 border p-3"  style="border-radius: 10px; background-color: #FFFFFF;">
+    <div class="w-100 d-flex" id="reg-pa" style="align-items:center; justify-content:center;">
+      <div class="w-45 vh-75 border register-con"  style="border-radius: 10px; background-color: #FFFFFF;">
         <div class="register_form">
 
           @error('over_name')
